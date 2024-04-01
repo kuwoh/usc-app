@@ -43,7 +43,7 @@ jobs:
       with:
         VCPKG_ROOT: ${{ github.workspace }}/vcpkg
         PROJECT_PATH: ${{ github.workspace }}
-    - name: try
+    - name: clone latest usc-android repo :/
       run: |
         cd app/src/main
         rm -rf cpp
