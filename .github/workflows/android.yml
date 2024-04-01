@@ -43,7 +43,15 @@ jobs:
       with:
         VCPKG_ROOT: ${{ github.workspace }}/vcpkg
         PROJECT_PATH: ${{ github.workspace }}
-
+    - name: try
+      run: |
+        cd app/src/main
+        rm -rf cpp
+        git clone https://github.com/kuwoh/usc-android
+        git submodule update --init --recursive
+        mv usc-android cpp
+    
+      
     - name: set up JDK 11
       uses: actions/setup-java@v3
       with:
@@ -53,7 +61,7 @@ jobs:
 
     - name: Install ndk
       if: steps.cache-ndk.outputs.cache-hit != 'true'
-      run: echo "y" | sudo /usr/local/lib/android/sdk/tools/bin/sdkmanager --install "ndk;$NDK_VERSION"
+      run: echo "y" | sudo /usr/local/lib/android/sdk/cmdline-tools/latest/bin/sdkmanager --install "ndk;$NDK_VERSION"
 
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
