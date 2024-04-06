@@ -3,7 +3,7 @@ name: Android CI
 on:
   push:
     workflow_dispatch:
-      - 'v*'
+
 
 env:
   NDK_VERSION: 25.2.9519653
@@ -32,7 +32,13 @@ jobs:
     - uses: actions/checkout@v3
       with:
         submodules: 'recursive'
-
+    - name: clone latest usc-android repo :/
+      run:  |
+        cd app/src/main
+        rm -rf cpp
+        git clone https://github.com/kuwoh/usc-android
+        git submodule update --init --recursive
+        mv usc-android cpp
     - name: vcpkg
       run: |
         cd vcpkg
@@ -44,14 +50,7 @@ jobs:
         VCPKG_ROOT: ${{ github.workspace }}/vcpkg
         PROJECT_PATH: ${{ github.workspace }}
         
-    - name: clone latest usc-android repo :/
-      run: |
-        cd app/src/main
-        rm -rf cpp
-        git clone https://github.com/kuwoh/usc-android
-        mv usc-android cpp
-        cd cpp
-        git submodule update --init --recursive
+    
         
   #fingers crossed after changing a lot of strings (again).
     - name: set up JDK 11
