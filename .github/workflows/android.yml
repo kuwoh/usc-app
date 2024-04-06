@@ -62,6 +62,17 @@ jobs:
       if: steps.cache-ndk.outputs.cache-hit != 'true'
       run: echo "y" | sudo /usr/local/lib/android/sdk/cmdline-tools/latest/bin/sdkmanager --install "ndk;$NDK_VERSION"
 
+    - name: clone latest usc-android repo :/
+      run: |
+        cd app/src/main
+        rm -rf cpp
+        git clone https://github.com/kuwoh/usc-android
+        mv usc-android cpp
+        cd cpp
+        git submodule update --init --recursive
+        
+  #fingers crossed after changing a lot of strings (again).
+
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
 
