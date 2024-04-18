@@ -76,7 +76,7 @@
          -->
      
         <activity android:name="HelloSDL2Activity"
-            android:authorities="com.example.unnamedsdvxclone.storageprovider.documents"
+            android:authorities="com.kuwoh.unnamedsdvxclone.storageprovider.documents"
             android:label="@string/app_name"
             android:alwaysRetainTaskState="true"
             android:launchMode="singleInstance"
