@@ -6,12 +6,10 @@ plugins {
 ext {
     ndkVersion = System.env.NDK_VERSION
 }
-
+ext {
+    kotlin_version = '1.9.10'
+}
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
-buildscript {
-    ext {
-        kotlin_version = '1.9.10'
-        }
-    }
+    
