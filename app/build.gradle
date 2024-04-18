@@ -7,13 +7,13 @@ else {
     apply plugin: 'com.android.library'
 }
 android {
-    compileSdk 30
+    compileSdk 28
     ndkVersion System.env.NDK_VERSION
 
     defaultConfig {
-        applicationId "com.example.unnamed_sdvx_clone"
-        minSdk 30
-        targetSdk 30
+        applicationId "com.kuwoh.unnamed_sdvx_clone"
+        minSdk 26
+        targetSdk 28
         versionCode 1
         versionName "1.0"
 
