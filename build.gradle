@@ -3,6 +3,11 @@ plugins {
     id 'com.android.library' version '7.2.2' apply false
 }
 
+buildscript {
+    ext {
+        kotlin_version = '1.9.10'
+    }
+
 ext {
     ndkVersion = System.env.NDK_VERSION
 }
@@ -10,3 +15,7 @@ ext {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+buildscript {
+    ext {
+        kotlin_version = '1.9.10'
+    }
