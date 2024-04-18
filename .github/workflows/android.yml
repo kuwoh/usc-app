@@ -42,7 +42,7 @@ jobs:
       run:  |
         cd app/src/main
         rm -rf cpp
-        git clone -b old --single-branch https://github.com/kuwoh/usc-android
+        git clone -b test --single-branch https://github.com/kuwoh/usc-android
         git submodule update --init --recursive
         mv usc-android cpp
         
