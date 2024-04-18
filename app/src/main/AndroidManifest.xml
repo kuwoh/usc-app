@@ -90,12 +90,12 @@
             <intent-filter>
                 <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />
             </intent-filter>
-            <provider>
+            <provider
+            android:name="HelloSDL2Activity"
             android:authorities="com.kuwoh.unnamed_sdvx_clone.storageprovider.documents"
             android:grantUriPermissions="true"
             android:exported="true"
-            android:permission="android.permission.MANAGE_DOCUMENTS"
-            </provider>
+            android:permission="android.permission.MANAGE_DOCUMENTS">
             <intent-filter>
                 <action android:name="android.content.action.DOCUMENTS_PROVIDER" />
             </intent-filter>
