@@ -109,14 +109,8 @@
 
             <!-- Provider -->
         <provider
-            android:name="androidx.core.content.FileProvider"
-            android:authorities="com.example.unnamed_sdvx_clone.fileprovider"
-            android:grantUriPermissions="true"
-            android:exported="true"
-        >
-        </provider>
-        <provider
-            android:authorities="${applicationId}.documents"
+            android:name="com.example.unnamed_sdvx_clone.DocumentsProvider"
+            android:authorities="com.example.unnamed_sdvx_clone.provider"
             android:exported="true"
             android:grantUriPermissions="true"
             android:permission="android.permission.MANAGE_DOCUMENTS">
