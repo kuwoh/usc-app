@@ -44,7 +44,7 @@ jobs:
         rm -rf cpp
         git clone -b main --single-branch https://github.com/kuwoh/usc-android-test
         git submodule update --init --recursive
-        mv usc-android cpp
+        mv usc-android-test cpp
         
     - name: set-env
       uses: allenevans/set-env@v2.0.0
