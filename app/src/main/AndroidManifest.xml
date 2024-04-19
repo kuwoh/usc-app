@@ -107,7 +107,7 @@
 
 
 
-            <!-- Provider -->
+            <!-- Provider 
         <provider
             android:name="com.example.unnamed_sdvx_clone.DocumentsProvider"
             android:authorities="com.example.unnamed_sdvx_clone.provider"
@@ -118,7 +118,7 @@
                 <action android:name="android.content.action.DOCUMENTS_PROVIDER" />
             </intent-filter>
         </provider>
-
+-->
     </application>
 
 </manifest>
