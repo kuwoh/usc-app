@@ -2,11 +2,10 @@ def buildAsLibrary = project.hasProperty('BUILD_AS_LIBRARY');
 def buildAsApplication = !buildAsLibrary
 if (buildAsApplication) {
     apply plugin: 'com.android.application'
-    apply plugin: 'org.jetbrains.kotlin.android'
+   
 }
 else {
     apply plugin: 'com.android.library'
-    apply plugin: 'org.jetbrains.kotlin.android'
 }
 android {
     compileSdk 30
@@ -91,6 +90,4 @@ dependencies {
     def appcompat_version = "1.3.0"
     def activity_version = "1.3.1"
 
-    implementation "androidx.appcompat:appcompat:$appcompat_version"
-    implementation "androidx.activity:activity:$activity_version"
 }
