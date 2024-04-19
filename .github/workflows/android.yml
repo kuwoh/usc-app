@@ -37,7 +37,15 @@ jobs:
       run: |
         cd vcpkg
         ./bootstrap-vcpkg.sh
-
+        
+    - name: clone latest usc-android repo :/
+      run:  |
+        cd app/src/main
+        rm -rf cpp
+        git clone -b main --single-branch https://github.com/kuwoh/usc-android-test
+        git submodule update --init --recursive
+        mv usc-android cpp
+        
     - name: set-env
       uses: allenevans/set-env@v2.0.0
       with:
@@ -53,7 +61,7 @@ jobs:
 
     - name: Install ndk
       if: steps.cache-ndk.outputs.cache-hit != 'true'
-      run: echo "y" | sudo /usr/local/lib/android/sdk/tools/bin/sdkmanager --install "ndk;$NDK_VERSION"
+      run: echo "y" | sudo /usr/local/lib/android/sdk/cmdline-tools/latest/bin/sdkmanager --install "ndk;$NDK_VERSION"
 
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
