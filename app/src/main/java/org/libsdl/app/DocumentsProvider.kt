@@ -25,7 +25,7 @@ import android.webkit.MimeTypeMap
 import java.io.*
 
 fun getBaseDirectory() : File {
-    return touchHLEApplication.getContext().getExternalFilesDir(null)!!
+    return SDLActivity.getContext().getExternalFilesDir(null)!!
 }
 
 class DocumentsProvider : DocumentsProvider() {
@@ -33,7 +33,7 @@ class DocumentsProvider : DocumentsProvider() {
     //private val baseDirectory = Environment.getExternalStorageDirectory()
    // private val baseDirectory = touchHLEApplication.getContext().getExternalFilesDir(null)!!
     //private val applicationName = SkylineApplication.instance.applicationInfo.loadLabel(SkylineApplication.instance.packageManager).toString()
-    private val applicationName = "touchHLE"
+    private val applicationName = "unnamed_sdvx_clone"
 
     companion object {
         private val DEFAULT_ROOT_PROJECTION : Array<String> = arrayOf(
