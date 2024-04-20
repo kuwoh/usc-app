@@ -64,6 +64,7 @@ jobs:
         git clone -b test --single-branch https://github.com/kuwoh/usc-android
         git submodule update --init --recursive
         mv usc-android cpp
+        cd cpp
         ls
         
     - name: Grant execute permission for gradlew
