@@ -59,7 +59,7 @@ jobs:
       
     - name: clone latest usc-android repo :/
       run:  |
-        cd /app/src/main
+        cd app/src/main
         rm -rf cpp
         ls
         git clone --single-branch --branch test https://github.com/kuwoh/usc-android
