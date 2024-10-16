@@ -54,7 +54,7 @@ jobs:
         
 
         
-  #fingers crossed after changing a lot of strings (again).
+  #note: lua file finding was due to luaconfig.h setting the directory to /usr/local/ instead of /sdcard/.usc/
     - name: set up JDK 11
       uses: actions/setup-java@v3
       with:
