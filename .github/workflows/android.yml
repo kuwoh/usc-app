@@ -61,14 +61,9 @@ jobs:
       run:  |
         cd app/src/main
         rm -rf cpp
-        ls
-        git clone https://github.com/kuwoh/usc-android-test
-        ls
+        git clone -b luafix --single-branch https://github.com/kuwoh/usc-android
         git submodule update --init --recursive
         mv usc-android-test cpp
-        ls
-        cd cpp
-        ls
         
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
