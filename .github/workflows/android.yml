@@ -64,7 +64,7 @@ jobs:
         git clone https://github.com/kuwoh/usc-android --branch modernize-storage-paths
         ls
         git submodule update --init --recursive
-        mv usc-android-test cpp
+        mv usc-android cpp
         ls
         cd cpp
         ls
