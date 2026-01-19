@@ -1,9 +1,7 @@
 name: Android CI
 
 on:
-  push:
-    workflow_dispatch:
-      - 'v*'
+  workflow_dispatch:
 
 env:
   NDK_VERSION: 25.2.9519653
@@ -23,7 +21,7 @@ jobs:
             vcpkg_target_triplet: arm-neon-android
             android_abi: armeabi-v7a
             ndk_platform_arch: arm-linux-androideabi
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
     env: 
       VCPKG_TARGET_TRIPLET: ${{ matrix.vcpkg_target_triplet }}
       ANDROID_ABI: ${{ matrix.android_abi }}
@@ -31,6 +29,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
       with:
+        ref: 'modernize-storage-paths'
         submodules: 'recursive'
 
     - name: vcpkg
@@ -62,7 +61,7 @@ jobs:
         cd app/src/main
         rm -rf cpp
         ls
-        git clone https://github.com/kuwoh/usc-android-test
+        git clone https://github.com/kuwoh/usc-android --branch modernize-storage-paths
         ls
         git submodule update --init --recursive
         mv usc-android-test cpp
