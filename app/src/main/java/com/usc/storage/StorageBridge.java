@@ -59,7 +59,7 @@ public class StorageBridge {
         DocumentFile root = DocumentFile.fromTreeUri(sContext, treeUri);
         if (root == null) return null;
         String rel = safPath;
-        if (rel.startsWith("saf: draining all references on this")
+        if (rel.startsWith("saf:/"))
             rel = rel.substring(5);
         if (rel.startsWith("/"))
             rel = rel.substring(1);
@@ -144,4 +144,3 @@ public class StorageBridge {
     }
 
     public static native void nativeSetGameDir(String path);
-}
