@@ -21,7 +21,7 @@ jobs:
             vcpkg_target_triplet: arm-neon-android
             android_abi: armeabi-v7a
             ndk_platform_arch: arm-linux-androideabi
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
     env: 
       VCPKG_TARGET_TRIPLET: ${{ matrix.vcpkg_target_triplet }}
       ANDROID_ABI: ${{ matrix.android_abi }}
